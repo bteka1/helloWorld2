@@ -1,0 +1,37 @@
+/* All paragraphs will have the darkgoldenrod color, a font size of 16, and a lighter font weight*/
+p {
+    color: darkgoldenrod;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+/* All level two headers will have the firebrick color, have a font size of 24, and be in Times New Roman Font*/
+h2 {
+    color: firebrick;
+    font-size: 24px;
+    font-family: "Times New Roman";
+}
+
+table, td, th {
+    border-style: solid;
+    border-width:3px;
+    border-color: saddlebrown;
+    border-collapse: collapse;
+}
+
+p#most-recent {
+    background-color: lightgray;
+    padding: 15px;
+}
+
+/*The HTML elements in the "list-style" class will have a font size of 16 and a line height of 2*/
+.list-style {
+    font-size: 16px;
+    line-height: 2;
+}
+
+img.logo {
+    width: 270px;
+    height: 95px;
+}
+
