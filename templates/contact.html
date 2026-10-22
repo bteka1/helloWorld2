@@ -1,0 +1,49 @@
+<!-- Connects the webpage to the base template -->
+{% extends "base.html" %}
+
+{% block page_title %}Contact Form{% endblock %}
+
+{% block page_head %}Contact Form{% endblock %}
+
+{% block page_content %}
+
+        <!-- Shows a thank-you message and the information submitted through the form -->
+        {% if form_submitted %}
+            <h2 class="mb-4">Thank you for contacting us!</h2>
+            <p>First Name: {{ request.form.get('first_name') }}</p>
+            <p>Last Name: {{ request.form.get('last_name') }}</p>
+            <p>Email Address: {{ request.form.get('email') }}</p>
+            <p>Contact Message: {{ request.form.get('contact_message') }}</p>
+
+            <!-- Allows the user to return to a blank contact form -->
+            <a href="{{ url_for('contact') }}">Complete form again</a>
+
+         {% else %}
+
+            <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+                <div class="col-md-6">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name">
+                </div>
+
+                <div class="col-12">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="col-12">
+                    <label for="contact_message" class="form-label">Contact Message</label>
+                    <textarea class="form-control" id="contact_message" name="contact_message" rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                </div>
+            </form>
+        {% endif %}
+{% endblock %}

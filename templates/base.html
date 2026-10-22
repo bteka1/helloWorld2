@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block page_title %}{% endblock %}</title>
+
+    <!-- Applies Bootstrap styling to the two webpages -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Displays the heading for each webpage -->
+        <h1>{% block page_head %}{% endblock %}</h1>
+
+        <!-- Displays the content for each webpage -->
+        {% block page_content %}{% endblock %}
+
+         <p class="mt-4">Created by: Bazen Teka</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
